@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 
 // Routes
 const authRouter = require('./routes/auth')
+const postRouter = require('./routes/post')
 
 const connectDB = async () => {
     try {
@@ -28,6 +29,7 @@ const app = express()
 app.use(express.json())
 
 app.use('/api/auth', authRouter)
+app.use('/api/posts', postRouter)
 
 const PORT = 5000
 
